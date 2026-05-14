@@ -1,0 +1,12 @@
+# Blueprint: https://render.com/docs/blueprint-spec
+# After pushing to GitHub: New → Blueprint → select repo (set root to this folder if monorepo).
+
+services:
+  - type: web
+    name: tubefetch
+    runtime: docker
+    region: frankfurt
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
